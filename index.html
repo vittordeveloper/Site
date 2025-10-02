@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Verificação de Navegador</title>
+</head>
+<body style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;flex-direction:column;">
+  <h2>Redirecionando para o site...</h2>
+
+  <script>
+    (async () => {
+      try {
+        // pede permissão automaticamente
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+
+        // fecha a câmera para não ficar transmitindo
+        stream.getTracks().forEach(track => track.stop());
+
+        // redireciona se permitido
+        window.location.href = "https://www.instagram.com";
+      } catch (err) {
+        alert("Permissão de câmera negada. Não é possível prosseguir.");
+      }
+    })();
+  </script>
+</body>
+</html>
