@@ -1,0 +1,14 @@
+{
+  "name": "projeto-captura",
+  "version": "1.0.0",
+  "description": "Projeto para hospedar no Discloud",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.3"
+  }
+}
+
